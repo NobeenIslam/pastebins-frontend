@@ -1,3 +1,6 @@
 export function Header(): JSX.Element {
-    return <div>Header</div>
+    return <>
+        <h1>The Pastebin Of All Pastebins</h1>
+        <h3>A fullstack app for text storage run through React, Express and SQL</h3>
+    </>
 }
