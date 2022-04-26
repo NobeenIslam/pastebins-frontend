@@ -9,7 +9,7 @@ interface SinglePasteElementProps {
 export function SinglePasteElement(
   props: SinglePasteElementProps
 ): JSX.Element {
-  return <section>
+  return <section className="SinglePasteElement">
     {props.data.title && <p>Title: {props.data.title}</p>}
     <ShowMoreText
       more="Show more"

@@ -1,0 +1,15 @@
+.SinglePasteElement {
+    display: block;
+    background: "red";
+    color: "red";
+}
+
+section {
+    display: block;
+    background: "red";
+    color: "red";
+}
+
+body {
+    color: 'red';
+}
