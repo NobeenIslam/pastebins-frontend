@@ -12,10 +12,8 @@ export default function ExistingPastes(
     <SinglePasteElement key={paste.id} data={paste} />
   ));
 
-  return (
-    <div>
+  return<div>
       <p>Existing Pastes</p>
       {PastesArrayJSX}
     </div>
-  );
 }

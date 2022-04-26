@@ -7,11 +7,9 @@ interface SinglePasteElementProps {
 export function SinglePasteElement(
   props: SinglePasteElementProps
 ): JSX.Element {
-  return (
-    <section>
+  return <section>
       <p>Title: {props.data.title}</p>
       <p>{props.data.text}</p>
       <p>Date Created: {props.data.creationDate}</p>
     </section>
-  );
 }

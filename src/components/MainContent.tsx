@@ -18,9 +18,7 @@ export function MainContent(): JSX.Element {
     fetchPastes();
   }, []);
 
-  return (
-    <div>
+  return <div>
       <ExistingPastes data={pastesArray} />
     </div>
-  );
 }
