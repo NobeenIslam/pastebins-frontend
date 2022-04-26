@@ -5,7 +5,7 @@ import { pastesInterface } from "../utils/pastesInterface";
 import ExistingPastes from "./ExistingPastes";
 
 export function MainContent(): JSX.Element {
-  //array of paste data 
+  //array of paste data
   const [pastesArray, setPastesArray] = useState<pastesInterface[]>([]);
 
   useEffect(() => {
@@ -18,10 +18,9 @@ export function MainContent(): JSX.Element {
     fetchPastes();
   }, []);
 
-
   return (
-  <div>
-  <ExistingPastes data={pastesArray}/>
-  </div>
-  )
+    <div>
+      <ExistingPastes data={pastesArray} />
+    </div>
+  );
 }
