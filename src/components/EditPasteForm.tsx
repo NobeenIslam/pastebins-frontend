@@ -9,18 +9,17 @@ interface formDataInterface {
 }
 
 interface EditPasteFormProps {
-  changeToggle: (arg: boolean) => void,
-  toggle: boolean,
-  data: pastesInterface,
-  changeToggleEditForm: (arg: boolean) => void,
+  changeToggle: (arg: boolean) => void;
+  toggle: boolean;
+  data: pastesInterface;
+  changeToggleEditForm: (arg: boolean) => void;
 }
 
 export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
   const [formData, setFormData] = useState<formDataInterface>({
     title: props.data.title,
-    text: props.data.text
+    text: props.data.text,
   });
-
 
   function handleFormChange(
     event:
@@ -37,10 +36,9 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     axios.put(baseUrl + `/pastes/${props.data.id}`, formData);
-    props.changeToggleEditForm(false)
-    props.changeToggle(!props.toggle)
+    props.changeToggleEditForm(false);
+    props.changeToggle(!props.toggle);
   }
-
 
   return (
     <form onSubmit={handleSubmit}>
