@@ -1,29 +1,146 @@
-.CenterBlocks{
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+main {
+    padding: 36px;
+    align-items: center;
+}
+
+.header {
     display: flex;
-    justify-content: center;
- }
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    padding: 10px;
+    font-weight: lighter;
+}
+
+
+.header--title {
+    font-size: 1.25rem;
+    margin-right: auto;
+}
+
+.header--description {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.page--title {
+    font-size: 1.75rem;
+    margin: auto;
+    text-align: center;
+    color: #3299d4 ;
+}
 
 .SinglePasteElement {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px solid black;
+    border-style: solid;
+    border-width: 4px;
+    border-color:  #3299d4;
+    border-radius: 10px;
     color: black;
-    padding: 10px;
-    width: 75%;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
     margin:30px auto;
+    gap: 10px;
  }
 
- .SinglePasteElement > .PasteTitle {
-     font-size: 30px;
-     color: red;
+ .paste--title {
+    font-size: 1.5rem;
+    margin: auto;
+    text-align: center;
+    color: #3299d4 ;
  }
 
-section {
-    background: rgb(255, 197, 197);
+.createPasteForm {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px;
+    align-items: center;
+    padding: 30px;
+    border-style: solid;
+    border-width: 4px;
+    border-color:  #3299d4;
+    border-radius: 10px;
 }
 
-body {
-    color: rgb(0, 0, 0);
-    background: rgb(255, 228, 228);
+.editPasteForm {
+    margin: 20px auto;
+    width: 100%;
+    align-items: center;
+    padding: 30px;
+    border-top: 3px solid #3299d4;
+
+}
+
+form { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--textarea {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+    width: 100%;
+    height: 150px;
+}
+
+.paste--buttons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #3299d4 ;
+}
+
+button {
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }

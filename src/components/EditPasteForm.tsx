@@ -41,9 +41,11 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
   }
 
   return (
+    <div className="editPasteForm">
     <form onSubmit={handleSubmit}>
       <label htmlFor="paste-form-title">Title</label>
       <input
+        className="form--input"
         name="title"
         value={formData.title}
         id="paste-form-title"
@@ -54,6 +56,7 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
       <br />
       <label htmlFor="paste-form-text">Text</label>
       <textarea
+        className="form--textarea"
         name="text"
         value={formData.text}
         id="paste-form-text"
@@ -61,7 +64,10 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
         onChange={(e) => handleFormChange(e)}
       />
       <br />
-      <button>Submit</button>
+      <button
+      className="form--button"
+      >Submit</button>
     </form>
+    </div>
   );
 }

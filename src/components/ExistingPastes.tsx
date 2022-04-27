@@ -21,7 +21,7 @@ export default function ExistingPastes(
 
   return (
     <div>
-      <h2>Existing Pastes</h2>
+      <h2 className="page--title">Recent Pastes</h2>
       {PastesArrayJSX.splice(0, 10)}
     </div>
   );

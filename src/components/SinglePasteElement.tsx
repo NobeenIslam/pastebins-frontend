@@ -28,13 +28,15 @@ export function SinglePasteElement(
 
   return (
     <section className="SinglePasteElement">
-      {props.data.title && <p className="PasteTitle">{props.data.title}</p>}
-      <ShowMoreText more="Show more" less="Show less" lines={3}>
+      {props.data.title && <p className="paste--title">{props.data.title}</p>}
+      <ShowMoreText more="Show more" less="Show less" lines={5}>
         <p>{props.data.text}</p>
       </ShowMoreText>
-      <p>Date Created: {creationDateFormatter(props.data.creationdate)}</p>
-      <button onClick={() => deletePaste(props.data.id)}>Delete</button>
+      <p>{creationDateFormatter(props.data.creationdate)}</p>
+      <div className="paste--buttons-container">
       <button onClick={editPaste}>Edit</button>
+      <button onClick={() => deletePaste(props.data.id)}>Delete</button>
+      </div>
       {showEditForm && (
         <EditPasteForm
           changeToggle={props.changeToggle}

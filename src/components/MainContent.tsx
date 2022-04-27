@@ -20,7 +20,7 @@ export function MainContent(): JSX.Element {
   }, [toggle]);
 
   return (
-    <div className="CenterBlocks">
+    <div>
       <CreatePasteForm changeToggle={setToggle} toggle={toggle} />
       <br />
       <ExistingPastes
