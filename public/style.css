@@ -1,15 +1,12 @@
 .SinglePasteElement {
     display: block;
-    background: "red";
-    color: "red";
-}
+ }
 
 section {
     display: block;
-    background: "red";
-    color: "red";
+    background: red;
 }
 
 body {
-    color: 'red';
+    color: red;
 }

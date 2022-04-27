@@ -12,13 +12,14 @@ export function MainContent(): JSX.Element {
     const url = baseUrl + "/pastes";
     async function fetchPastes() {
       const response = await axios.get(url);
-      console.log(response.data);
       setPastesArray(response.data);
     }
     fetchPastes();
   }, []);
 
-  return <div>
+  return (
+    <div>
       <ExistingPastes data={pastesArray} />
     </div>
+  );
 }
