@@ -18,7 +18,7 @@ export function MainContent(): JSX.Element {
   }, []);
 
   return (
-    <div>
+    <div className="CenterBlocks">
       <ExistingPastes data={pastesArray} />
     </div>
   );

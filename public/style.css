@@ -1,12 +1,29 @@
+.CenterBlocks{
+    display: flex;
+    justify-content: center;
+ }
+
 .SinglePasteElement {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid black;
+    color: black;
+    padding: 10px;
+    width: 75%;
+    margin:30px auto;
+ }
+
+ .SinglePasteElement > .PasteTitle {
+     font-size: 30px;
+     color: red;
  }
 
 section {
-    display: block;
-    background: red;
+    background: rgb(255, 197, 197);
 }
 
 body {
-    color: red;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 228, 228);
 }
