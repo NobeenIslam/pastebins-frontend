@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { pastesInterface } from "../utils/pastesInterface";
 import ExistingPastes from "./ExistingPastes";
+import { CreatePasteForm } from "./CreatePasteForm";
 
 export function MainContent(): JSX.Element {
   //array of paste data
@@ -19,6 +20,8 @@ export function MainContent(): JSX.Element {
 
   return (
     <div className="CenterBlocks">
+      <CreatePasteForm />
+      <br />
       <ExistingPastes data={pastesArray} />
     </div>
   );

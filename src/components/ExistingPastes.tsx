@@ -14,7 +14,7 @@ export default function ExistingPastes(
 
   return (
     <div>
-      <p>Existing Pastes</p>
+      <h2>Existing Pastes</h2>
       {PastesArrayJSX.splice(0, 10)}
     </div>
   );
