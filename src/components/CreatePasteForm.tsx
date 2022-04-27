@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { baseUrl } from "../utils/baseUrl";
 
 interface formDataInterface {
   title: string;
@@ -23,8 +25,15 @@ export function CreatePasteForm(): JSX.Element {
     console.log(formData);
   }
 
+  function handleSubmit(event:any){
+    event.preventDefault();
+    axios.post(baseUrl + "/pastes", formData);
+    setFormData({title: "", text: ""})
+  }
+
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="paste-form-title">Title</label>
       <input
         name="title"
