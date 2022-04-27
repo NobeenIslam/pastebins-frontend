@@ -12,7 +12,7 @@ interface CreatePasteFormProps {
   toggle: boolean
 }
 
-export function CreatePasteForm(props:CreatePasteFormProps): JSX.Element {
+export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
   const [formData, setFormData] = useState<formDataInterface>({
     title: "",
     text: "",
@@ -31,10 +31,10 @@ export function CreatePasteForm(props:CreatePasteFormProps): JSX.Element {
     console.log(formData);
   }
 
-  function handleSubmit(event:any){
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     axios.post(baseUrl + "/pastes", formData);
-    setFormData({title: "", text: ""})
+    setFormData({ title: "", text: "" })
     props.changeToggle(!props.toggle)
   }
 
