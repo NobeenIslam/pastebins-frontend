@@ -7,11 +7,17 @@ interface formDataInterface {
   text: string;
 }
 
-export function CreatePasteForm(): JSX.Element {
+interface CreatePasteFormProps {
+  changeToggle: (arg: boolean) => void,
+  toggle: boolean
+}
+
+export function CreatePasteForm(props:CreatePasteFormProps): JSX.Element {
   const [formData, setFormData] = useState<formDataInterface>({
     title: "",
     text: "",
   });
+
 
   function handleFormChange(
     event:
@@ -29,6 +35,7 @@ export function CreatePasteForm(): JSX.Element {
     event.preventDefault();
     axios.post(baseUrl + "/pastes", formData);
     setFormData({title: "", text: ""})
+    props.changeToggle(!props.toggle)
   }
 
 
