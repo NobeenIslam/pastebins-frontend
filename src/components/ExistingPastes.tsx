@@ -2,9 +2,9 @@ import { pastesInterface } from "../utils/pastesInterface";
 import { SinglePasteElement } from "./SinglePasteElement";
 
 interface ExistingPastesProps {
-  data: pastesInterface[],
-  changeToggle: (arg: boolean) => void,
-  toggle: boolean
+  data: pastesInterface[];
+  changeToggle: (arg: boolean) => void;
+  toggle: boolean;
 }
 
 export default function ExistingPastes(

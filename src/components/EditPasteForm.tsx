@@ -1,21 +1,24 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { baseUrl } from "../utils/baseUrl";
+import { pastesInterface } from "../utils/pastesInterface";
 
 interface formDataInterface {
   title: string;
   text: string;
 }
 
-interface CreatePasteFormProps {
+interface EditPasteFormProps {
   changeToggle: (arg: boolean) => void;
   toggle: boolean;
+  data: pastesInterface;
+  changeToggleEditForm: (arg: boolean) => void;
 }
 
-export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
+export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
   const [formData, setFormData] = useState<formDataInterface>({
-    title: "",
-    text: "",
+    title: props.data.title,
+    text: props.data.text,
   });
 
   function handleFormChange(
@@ -32,8 +35,8 @@ export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    axios.post(baseUrl + "/pastes", formData);
-    setFormData({ title: "", text: "" });
+    axios.put(baseUrl + `/pastes/${props.data.id}`, formData);
+    props.changeToggleEditForm(false);
     props.changeToggle(!props.toggle);
   }
 
