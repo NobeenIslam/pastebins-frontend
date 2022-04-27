@@ -2,14 +2,21 @@ import { pastesInterface } from "../utils/pastesInterface";
 import { SinglePasteElement } from "./SinglePasteElement";
 
 interface ExistingPastesProps {
-  data: pastesInterface[];
+  data: pastesInterface[],
+  changeToggle: (arg: boolean) => void,
+  toggle: boolean
 }
 
 export default function ExistingPastes(
   props: ExistingPastesProps
 ): JSX.Element {
   const PastesArrayJSX = props.data.map((paste) => (
-    <SinglePasteElement key={paste.id} data={paste} />
+    <SinglePasteElement
+      key={paste.id}
+      data={paste}
+      changeToggle={props.changeToggle}
+      toggle={props.toggle}
+    />
   ));
 
   return (
