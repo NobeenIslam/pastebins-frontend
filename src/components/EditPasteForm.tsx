@@ -2,11 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { baseUrl } from "../utils/baseUrl";
 import { pastesInterface } from "../utils/pastesInterface";
-
-interface formDataInterface {
-  title: string;
-  text: string;
-}
+import { formDataInterface } from "./CreatePasteForm";
 
 interface EditPasteFormProps {
   changeToggle: (arg: boolean) => void;
