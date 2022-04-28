@@ -5,7 +5,8 @@ import axios from "axios";
 import { baseUrl } from "../utils/baseUrl";
 import { EditPasteForm } from "./EditPasteForm";
 import { useState } from "react";
-import { Comments } from "./Comments";
+import { ExistingComments } from "./Comments";
+
 
 interface SinglePasteElementProps {
   data: pastesInterface;
@@ -36,7 +37,7 @@ export function SinglePasteElement(
       </ShowMoreText>
       <p>{creationDateFormatter(props.data.creationdate)}</p>
       <div className="paste--buttons-container">
-      <button onClick={() => setToggleComments((prev) => !prev)}>Comments</button>
+        <button onClick={() => setToggleComments((prev) => !prev)}>Comments</button>
         <button onClick={editPaste}>Edit</button>
         <button onClick={() => deletePaste(props.data.id)}>Delete</button>
       </div>
@@ -48,7 +49,11 @@ export function SinglePasteElement(
           changeToggleEditForm={setShowEditForm}
         />
       )}
-      {toggleComments && <Comments/>}
+      {toggleComments &&
+        <ExistingComments
+          pasteId={props.data.id}
+          toggle={props.toggle}
+        />}
     </section>
   );
 }
