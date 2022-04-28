@@ -38,20 +38,31 @@ export function SinglePasteElement(
   return (
     <section className="SinglePasteElement">
       {props.data.title && <p className="paste--title">{props.data.title}</p>}
-      <ShowMoreText more="Show more" less="Show less" lines={5}>
-        <p>{props.data.text}</p>
-      </ShowMoreText>
-      <p>{creationDateFormatter(props.data.creationdate)}</p>
+      <div className="paste-content">
+        <ShowMoreText more="Show more" less="Show less" lines={5}>
+          <p className="paste-content">{props.data.text}</p>
+        </ShowMoreText>
+        <em className="date-font">
+          {creationDateFormatter(props.data.creationdate)}
+        </em>
+      </div>
 
       <div className="paste--buttons-container">
-        <button onClick={() => setToggleComments((prev) => !prev)}>
+        <button
+          className="button"
+          onClick={() => setToggleComments((prev) => !prev)}
+        >
           {toggleComments ? "Hide Comments" : "Show Comments"}
         </button>
-        <button onClick={addComment}>
+        <button className="button" onClick={addComment}>
           {toggleCommentForm ? "Cancel Comment" : "Add Comment"}
         </button>
-        <button onClick={editPaste}>Edit Paste</button>
-        <button onClick={() => deletePaste(props.data.id)}>Delete Paste</button>
+        <button className="button" onClick={editPaste}>
+          Edit Paste
+        </button>
+        <button className="button" onClick={() => deletePaste(props.data.id)}>
+          Delete Paste
+        </button>
       </div>
 
       {toggleCommentForm && (

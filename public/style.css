@@ -15,7 +15,7 @@ main {
 .header {
     display: flex;
     align-items: center;
-    height: 65px;
+    height: 75px;
     background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
     color: white;
     padding: 20px;
@@ -33,14 +33,17 @@ main {
     font-weight: lighter;
 }
 
+.logo {
+    margin-right: 10px;
+}
 
 .header--title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-right: auto;
 }
 
 .header--description {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -49,6 +52,21 @@ main {
     margin: auto;
     text-align: center;
     color: #3299d4 ;
+    margin-bottom: 30px;
+}
+
+.date-font {
+    font-size: 0.8rem;
+    color: gray;
+    
+}
+
+.recent-pastes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 40px;
 }
 
 .SinglePasteElement {
@@ -63,15 +81,42 @@ main {
     padding: 20px;
     width: 80%;
     max-width: 1000px;
-    margin:30px auto;
+    margin:0px auto;
     gap: 10px;
+    box-shadow: 2px 5px 5px 1px rgba(120,120,120,0.44);
+}
+
+.paste-content{ 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+ .comment-container {
+   margin: 20px auto;
+   border: 1px solid lightgray;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+   padding: 15px 15px;
+   max-width: 600px;
+   -webkit-box-shadow: 2px 2px 2px 1px rgba(120,120,120,0.44);
+   -moz-box-shadow: 2px 2px 2px 1px rgba(120,120,120,0.44);
+   gap: 17px;
  }
+
+ .comment--info {
+     display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    }
 
  .paste--title {
     font-size: 1.5rem;
     margin: auto;
     text-align: center;
     color: #3299d4 ;
+    margin-bottom: 5px;
  }
 
 .createPasteForm {
@@ -122,7 +167,10 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 15px;
 }
+
+
 
 label {
     font-size: 1.25rem;
@@ -133,7 +181,7 @@ label {
     color: #3299d4 ;
 }
 
-button {
+.button {
     font-family: "Karla", sans-serif;
     font-size: 1rem;
     font-weight: bold;
@@ -142,5 +190,20 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
+    
+}
+
+.button:hover {
+     background: linear-gradient(90.41deg, #711F8D 1.14%, #b04cd1 100%);
+}
+
+.comment--button {
+    border: none;
+    cursor: pointer;
+    background: white;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  
+    
 }

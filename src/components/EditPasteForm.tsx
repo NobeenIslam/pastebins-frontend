@@ -59,7 +59,7 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
           onChange={(e) => handleFormChange(e)}
         />
         <br />
-        <button className="form--button">Submit</button>
+        <button className="button">Submit</button>
       </form>
     </div>
   );
