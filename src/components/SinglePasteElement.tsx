@@ -6,6 +6,8 @@ import { baseUrl } from "../utils/baseUrl";
 import { EditPasteForm } from "./EditPasteForm";
 import { useState } from "react";
 import { ExistingComments } from "./ExistingComments";
+import { CreateCommentForm } from "./CreateCommentForm";
+
 
 
 interface SinglePasteElementProps {
@@ -29,6 +31,10 @@ export function SinglePasteElement(
     setShowEditForm(true);
   }
 
+  // function addComment() {
+  //   setShowCommentForm()
+  // }
+
   return (
     <section className="SinglePasteElement">
       {props.data.title && <p className="paste--title">{props.data.title}</p>}
@@ -38,9 +44,15 @@ export function SinglePasteElement(
       <p>{creationDateFormatter(props.data.creationdate)}</p>
       <div className="paste--buttons-container">
         <button onClick={() => setToggleComments((prev) => !prev)}>Comments</button>
+        {/* <button onClick={addComment}>Add Comment</button> */}
         <button onClick={editPaste}>Edit</button>
         <button onClick={() => deletePaste(props.data.id)}>Delete</button>
       </div>
+      <CreateCommentForm
+        changeToggle={props.changeToggle}
+        toggle={props.toggle}
+        pasteId={props.data.id}
+      />
       {showEditForm && (
         <EditPasteForm
           changeToggle={props.changeToggle}
