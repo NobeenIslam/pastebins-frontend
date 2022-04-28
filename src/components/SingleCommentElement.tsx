@@ -18,13 +18,18 @@ export function SingleCommentElement(
   }
 
   return (
-    <section>
-      <p>{props.data.comment}</p>
-      <em>{creationDateFormatter(props.data.creationdate)}</em>
-      <div className="paste--buttons-container">
-        <button onClick={handleDeleteComment}>🗑️</button>
+    <section className="comment-grid">
+      <div className="comment--buttons-container">
+        <button className="comment--button" onClick={handleDeleteComment}>
+          🗑️
+        </button>
       </div>
-      <hr />
+      <div className="comment-container">
+        <p>{props.data.comment}</p>
+        <em className="date-font">
+          {creationDateFormatter(props.data.creationdate)}
+        </em>
+      </div>
     </section>
   );
 }
