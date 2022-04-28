@@ -34,8 +34,8 @@ export function SinglePasteElement(
       </ShowMoreText>
       <p>{creationDateFormatter(props.data.creationdate)}</p>
       <div className="paste--buttons-container">
-      <button onClick={editPaste}>Edit</button>
-      <button onClick={() => deletePaste(props.data.id)}>Delete</button>
+        <button onClick={editPaste}>Edit</button>
+        <button onClick={() => deletePaste(props.data.id)}>Delete</button>
       </div>
       {showEditForm && (
         <EditPasteForm
