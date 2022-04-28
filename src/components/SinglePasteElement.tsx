@@ -71,7 +71,11 @@ export function SinglePasteElement(
         />
       )}
       {toggleComments && (
-        <ExistingComments pasteId={props.data.id} toggle={props.toggle} />
+        <ExistingComments
+          pasteId={props.data.id}
+          toggle={props.toggle}
+          changeToggle={props.changeToggle}
+        />
       )}
     </section>
   );
