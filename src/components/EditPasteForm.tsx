@@ -30,7 +30,6 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
     setFormData((previous) => {
       return { ...previous, [name]: value };
     });
-    console.log(formData);
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
