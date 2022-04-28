@@ -3,18 +3,18 @@ import React, { useState } from "react";
 import { baseUrl } from "../utils/baseUrl";
 
 export interface formDataInterface {
-  comment: string
+  comment: string;
 }
 
 interface CreateCommmentFormProps {
-  changeToggle: (arg: boolean) => void,
-  toggle: boolean,
-  pasteId: number,
+  changeToggle: (arg: boolean) => void;
+  toggle: boolean;
+  pasteId: number;
 }
 
 export function CreateCommentForm(props: CreateCommmentFormProps): JSX.Element {
   const [formData, setFormData] = useState<formDataInterface>({
-    comment: ""
+    comment: "",
   });
 
   function handleFormChange(

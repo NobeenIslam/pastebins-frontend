@@ -1,16 +1,18 @@
-import { creationDateFormatter } from "../utils/creationDateFormatter"
-import { commentInterface } from "./ExistingComments"
+import { creationDateFormatter } from "../utils/creationDateFormatter";
+import { commentInterface } from "./ExistingComments";
 
 interface SinglCommentElementProps {
-    data: commentInterface
+  data: commentInterface;
 }
 
-export function SingleCommentElement(props: SinglCommentElementProps): JSX.Element {
-    return (
-        <section>
-            <p>{props.data.comment}</p>
-            <em>{creationDateFormatter(props.data.creationdate)}</em>
-            <hr />
-        </section>
-    )
+export function SingleCommentElement(
+  props: SinglCommentElementProps
+): JSX.Element {
+  return (
+    <section>
+      <p>{props.data.comment}</p>
+      <em>{creationDateFormatter(props.data.creationdate)}</em>
+      <hr />
+    </section>
+  );
 }

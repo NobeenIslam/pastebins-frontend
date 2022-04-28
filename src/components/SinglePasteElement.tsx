@@ -8,8 +8,6 @@ import { useState } from "react";
 import { ExistingComments } from "./ExistingComments";
 import { CreateCommentForm } from "./CreateCommentForm";
 
-
-
 interface SinglePasteElementProps {
   data: pastesInterface;
   changeToggle: (arg: boolean) => void;
@@ -20,8 +18,8 @@ export function SinglePasteElement(
   props: SinglePasteElementProps
 ): JSX.Element {
   const [showEditForm, setShowEditForm] = useState<boolean>(false);
-  const [toggleCommentForm, setToggleCommentForm] = useState<boolean>(false)
-  const [toggleComments, setToggleComments] = useState<boolean>(false)
+  const [toggleCommentForm, setToggleCommentForm] = useState<boolean>(false);
+  const [toggleComments, setToggleComments] = useState<boolean>(false);
 
   async function deletePaste(id: number) {
     await axios.delete(baseUrl + `/pastes/${id}`);
@@ -33,8 +31,8 @@ export function SinglePasteElement(
   }
 
   function addComment() {
-    console.log("Hello")
-    setToggleCommentForm((prev) => !prev)
+    console.log("Hello");
+    setToggleCommentForm((prev) => !prev);
   }
 
   return (
@@ -46,18 +44,23 @@ export function SinglePasteElement(
       <p>{creationDateFormatter(props.data.creationdate)}</p>
 
       <div className="paste--buttons-container">
-        <button onClick={() => setToggleComments((prev) => !prev)}>{toggleComments ? "Hide Comments" : "Show Comments"}</button>
-        <button onClick={addComment}>{toggleCommentForm ? "Cancel" : "Add Comment"}</button>
+        <button onClick={() => setToggleComments((prev) => !prev)}>
+          {toggleComments ? "Hide Comments" : "Show Comments"}
+        </button>
+        <button onClick={addComment}>
+          {toggleCommentForm ? "Cancel" : "Add Comment"}
+        </button>
         <button onClick={editPaste}>Edit Paste</button>
         <button onClick={() => deletePaste(props.data.id)}>Delete Paste</button>
       </div>
 
-      {toggleCommentForm && <CreateCommentForm
-        changeToggle={props.changeToggle}
-        toggle={props.toggle}
-        pasteId={props.data.id}
-      />
-      }
+      {toggleCommentForm && (
+        <CreateCommentForm
+          changeToggle={props.changeToggle}
+          toggle={props.toggle}
+          pasteId={props.data.id}
+        />
+      )}
       {showEditForm && (
         <EditPasteForm
           changeToggle={props.changeToggle}
@@ -66,11 +69,9 @@ export function SinglePasteElement(
           changeToggleEditForm={setShowEditForm}
         />
       )}
-      {toggleComments &&
-        <ExistingComments
-          pasteId={props.data.id}
-          toggle={props.toggle}
-        />}
+      {toggleComments && (
+        <ExistingComments pasteId={props.data.id} toggle={props.toggle} />
+      )}
     </section>
   );
 }

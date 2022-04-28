@@ -27,7 +27,7 @@ export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
     setFormData((previous) => {
       return { ...previous, [name]: value };
     });
-   }
+  }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
