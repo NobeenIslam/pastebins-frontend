@@ -1,5 +1,5 @@
 import { creationDateFormatter } from "../utils/creationDateFormatter"
-import { commentInterface } from "./Comments"
+import { commentInterface } from "./ExistingComments"
 
 interface SinglCommentElementProps {
     data: commentInterface

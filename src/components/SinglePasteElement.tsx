@@ -5,7 +5,7 @@ import axios from "axios";
 import { baseUrl } from "../utils/baseUrl";
 import { EditPasteForm } from "./EditPasteForm";
 import { useState } from "react";
-import { ExistingComments } from "./Comments";
+import { ExistingComments } from "./ExistingComments";
 
 
 interface SinglePasteElementProps {
