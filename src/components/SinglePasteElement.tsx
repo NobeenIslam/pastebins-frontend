@@ -38,12 +38,14 @@ export function SinglePasteElement(
   return (
     <section className="SinglePasteElement">
       {props.data.title && <p className="paste--title">{props.data.title}</p>}
+      <div className="paste-content">
       <ShowMoreText more="Show more" less="Show less" lines={5}>
-        <p>{props.data.text}</p>
+        <p className="paste-content">{props.data.text}</p>
       </ShowMoreText>
       <em className="date-font">
         {creationDateFormatter(props.data.creationdate)}
       </em>
+      </div>
 
       <div className="paste--buttons-container">
         <button

@@ -22,7 +22,9 @@ export default function ExistingPastes(
   return (
     <div>
       <h2 className="page--title">Recent Pastes</h2>
+      <div className="recent-pastes">
       {PastesArrayJSX.splice(0, 10)}
+      </div>
     </div>
   );
 }
