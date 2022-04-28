@@ -10,6 +10,7 @@ interface CreateCommmentFormProps {
   changeToggle: (arg: boolean) => void;
   toggle: boolean;
   pasteId: number;
+  changeToggleCommentForm: (arg: boolean) => void;
 }
 
 export function CreateCommentForm(props: CreateCommmentFormProps): JSX.Element {
@@ -33,6 +34,7 @@ export function CreateCommentForm(props: CreateCommmentFormProps): JSX.Element {
     axios.post(baseUrl + `/pastes/${props.pasteId}/comments`, formData);
     setFormData({ comment: "" });
     props.changeToggle(!props.toggle);
+    props.changeToggleCommentForm(false)
   }
 
   return (

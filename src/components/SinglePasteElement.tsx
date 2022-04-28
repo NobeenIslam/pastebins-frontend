@@ -48,7 +48,7 @@ export function SinglePasteElement(
           {toggleComments ? "Hide Comments" : "Show Comments"}
         </button>
         <button onClick={addComment}>
-          {toggleCommentForm ? "Cancel" : "Add Comment"}
+          {toggleCommentForm ? "Cancel Comment" : "Add Comment"}
         </button>
         <button onClick={editPaste}>Edit Paste</button>
         <button onClick={() => deletePaste(props.data.id)}>Delete Paste</button>
@@ -59,6 +59,7 @@ export function SinglePasteElement(
           changeToggle={props.changeToggle}
           toggle={props.toggle}
           pasteId={props.data.id}
+          changeToggleCommentForm={setToggleCommentForm}
         />
       )}
       {showEditForm && (
