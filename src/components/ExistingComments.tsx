@@ -5,6 +5,7 @@ import { SingleCommentElement } from "./SingleCommentElement";
 
 interface ExistingCommentsProps {
   pasteId: number;
+  changeToggle: (arg: boolean) => void;
   toggle: boolean;
 }
 
@@ -28,7 +29,12 @@ export function ExistingComments(props: ExistingCommentsProps): JSX.Element {
   }, [props.toggle, props.pasteId]);
 
   const commentJSXArray: JSX.Element[] = comments.map((comment) => (
-    <SingleCommentElement key={comment.id} data={comment} />
+    <SingleCommentElement
+      key={comment.id}
+      data={comment}
+      changeToggle={props.changeToggle}
+      toggle={props.toggle}
+    />
   ));
 
   return <section>{commentJSXArray}</section>;
