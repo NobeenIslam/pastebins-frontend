@@ -10,6 +10,7 @@ export function SingleCommentElement(props: SinglCommentElementProps): JSX.Eleme
         <section>
             <p>{props.data.comment}</p>
             <em>{creationDateFormatter(props.data.creationdate)}</em>
+            <hr />
         </section>
     )
 }
