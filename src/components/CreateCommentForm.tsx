@@ -34,7 +34,7 @@ export function CreateCommentForm(props: CreateCommmentFormProps): JSX.Element {
     axios.post(baseUrl + `/pastes/${props.pasteId}/comments`, formData);
     setFormData({ comment: "" });
     props.changeToggle(!props.toggle);
-    props.changeToggleCommentForm(false)
+    props.changeToggleCommentForm(false);
   }
 
   return (
