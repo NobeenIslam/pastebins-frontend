@@ -20,6 +20,7 @@ export function SinglePasteElement(
   props: SinglePasteElementProps
 ): JSX.Element {
   const [showEditForm, setShowEditForm] = useState<boolean>(false);
+  const [toggleCommentForm, setToggleCommentForm] = useState<boolean>(false)
   const [toggleComments, setToggleComments] = useState<boolean>(false)
 
   async function deletePaste(id: number) {
@@ -31,9 +32,10 @@ export function SinglePasteElement(
     setShowEditForm(true);
   }
 
-  // function addComment() {
-  //   setShowCommentForm()
-  // }
+  function addComment() {
+    console.log("Hello")
+    setToggleCommentForm((prev) => !prev)
+  }
 
   return (
     <section className="SinglePasteElement">
@@ -42,17 +44,20 @@ export function SinglePasteElement(
         <p>{props.data.text}</p>
       </ShowMoreText>
       <p>{creationDateFormatter(props.data.creationdate)}</p>
+
       <div className="paste--buttons-container">
-        <button onClick={() => setToggleComments((prev) => !prev)}>Comments</button>
-        {/* <button onClick={addComment}>Add Comment</button> */}
-        <button onClick={editPaste}>Edit</button>
-        <button onClick={() => deletePaste(props.data.id)}>Delete</button>
+        <button onClick={() => setToggleComments((prev) => !prev)}>{toggleComments ? "Hide Comments" : "Show Comments"}</button>
+        <button onClick={addComment}>{toggleCommentForm ? "Cancel" : "Add Comment"}</button>
+        <button onClick={editPaste}>Edit Paste</button>
+        <button onClick={() => deletePaste(props.data.id)}>Delete Paste</button>
       </div>
-      <CreateCommentForm
+
+      {toggleCommentForm && <CreateCommentForm
         changeToggle={props.changeToggle}
         toggle={props.toggle}
         pasteId={props.data.id}
       />
+      }
       {showEditForm && (
         <EditPasteForm
           changeToggle={props.changeToggle}
