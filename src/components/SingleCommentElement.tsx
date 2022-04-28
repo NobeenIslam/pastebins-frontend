@@ -9,15 +9,12 @@ interface SinglCommentElementProps {
   toggle: boolean;
 }
 
-
-
 export function SingleCommentElement(
   props: SinglCommentElementProps
 ): JSX.Element {
-
   function handleDeleteComment() {
-    axios.delete(baseUrl + `/pastes/comments/${props.data.id}`)
-    props.changeToggle(!props.toggle)
+    axios.delete(baseUrl + `/pastes/comments/${props.data.id}`);
+    props.changeToggle(!props.toggle);
   }
 
   return (
