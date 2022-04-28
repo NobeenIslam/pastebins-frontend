@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { baseUrl } from "../utils/baseUrl";
 
-interface formDataInterface {
+export interface formDataInterface {
   title: string;
   text: string;
 }
@@ -27,8 +27,7 @@ export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
     setFormData((previous) => {
       return { ...previous, [name]: value };
     });
-    console.log(formData);
-  }
+   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
