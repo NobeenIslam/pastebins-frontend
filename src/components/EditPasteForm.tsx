@@ -28,9 +28,9 @@ export function EditPasteForm(props: EditPasteFormProps): JSX.Element {
     });
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    axios.put(baseUrl + `/pastes/${props.data.id}`, formData);
+    await axios.put(baseUrl + `/pastes/${props.data.id}`, formData);
     props.changeToggleEditForm(false);
     props.changeToggle(!props.toggle);
   }
