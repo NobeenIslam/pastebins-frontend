@@ -29,9 +29,9 @@ export function CreatePasteForm(props: CreatePasteFormProps): JSX.Element {
     });
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    axios.post(baseUrl + "/pastes", formData);
+    await axios.post(baseUrl + "/pastes", formData);
     setFormData({ title: "", text: "" });
     props.changeToggle(!props.toggle);
   }

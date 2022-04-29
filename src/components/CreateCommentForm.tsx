@@ -29,9 +29,9 @@ export function CreateCommentForm(props: CreateCommmentFormProps): JSX.Element {
     });
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    axios.post(baseUrl + `/pastes/${props.pasteId}/comments`, formData);
+    await axios.post(baseUrl + `/pastes/${props.pasteId}/comments`, formData);
     setFormData({ comment: "" });
     props.changeToggle(!props.toggle);
     props.changeToggleCommentForm(false);
