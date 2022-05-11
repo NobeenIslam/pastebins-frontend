@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+main {
+    padding: 36px;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    padding: 10px;
+    font-weight: lighter;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.header--title {
+    font-size: 1.5rem;
+    margin-right: auto;
+}
+
+.header--description {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.page--title {
+    font-size: 1.75rem;
+    margin: auto;
+    text-align: center;
+    color: #3299d4 ;
+    margin-bottom: 30px;
+}
+
+.date-font {
+    font-size: 0.8rem;
+    color: gray;
+    
+}
+
+.recent-pastes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+.SinglePasteElement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-width: 4px;
+    border-color:  #3299d4;
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin:0px auto;
+    gap: 10px;
+    box-shadow: 2px 5px 5px 1px rgba(120,120,120,0.44);
+}
+
+.paste-content{ 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+ .comment-container {
+   margin: 20px auto;
+   border: 1px solid lightgray;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px 1px rgba(120,120,120,0.44);
+   padding: 15px 15px;
+   max-width: 600px;
+   -webkit-box-shadow: 2px 2px 2px 1px rgba(120,120,120,0.44);
+   -moz-box-shadow: 2px 2px 2px 1px rgba(120,120,120,0.44);
+   gap: 17px;
+ }
+
+ .comment--info {
+     display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    }
+
+ .paste--title {
+    font-size: 1.5rem;
+    margin: auto;
+    text-align: center;
+    color: #3299d4 ;
+    margin-bottom: 5px;
+ }
+
+.createPasteForm {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px;
+    align-items: center;
+    padding: 30px;
+    border-style: solid;
+    border-width: 4px;
+    border-color:  #3299d4;
+    border-radius: 10px;
+}
+
+.editPasteForm {
+    margin: 20px auto;
+    width: 100%;
+    align-items: center;
+    padding: 30px;
+    border-top: 3px solid #3299d4;
+
+}
+
+form { 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.form--input {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
+
+.form--textarea {
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+    width: 100%;
+    height: 150px;
+}
+
+.paste--buttons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+
+label {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #3299d4 ;
+}
+
+.button {
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    background: linear-gradient(90.41deg, #3299d4 1.14%, #18bdda 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    
+}
+
+.button:hover {
+     background: linear-gradient(90.41deg, #711F8D 1.14%, #b04cd1 100%);
+}
+
+.comment--button {
+    border: none;
+    cursor: pointer;
+    background: white;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  
+    
+}
